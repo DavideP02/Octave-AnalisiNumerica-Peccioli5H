@@ -1,3 +1,5 @@
+% https://github.com/DavideP02/Octave_AnalisiNumerica_Peccioli5H/blob/7e433ab3969fef9846d3655c746df6af5e1e9caf/Analisi%20Numerica.m
+
 f = input('Inserire la funzione, ricordandosi di includere "@(x)" prima della dichiarazione: ')
 g = @(x) 0;
 

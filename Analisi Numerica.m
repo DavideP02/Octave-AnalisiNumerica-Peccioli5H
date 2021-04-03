@@ -4,6 +4,7 @@ f = input('Inserire la funzione, ricordandosi di includere "@(x)" prima della di
 g = @(x) 0;
 
 f1 = figure %stampare il grafico per visualizzare l'intervallo contenente gli zeri
+axis equal
 fplot(f)
 hold on
 fplot(g)
@@ -22,6 +23,7 @@ attendere = input('Schiaccia invio per iniziare')
 close(f1)
 
 figure % grafico dell'intervallo zoomato
+axis equal
 fplot(f, [a,b])
 hold on
 fplot(g, [a,b])
@@ -69,6 +71,7 @@ a = estremodestro;
 b = estremosinistro;
 
 f3 = figure % grafico dell'intervallo zoomato
+axis equal
 fplot(f, [a,b])
 hold on
 fplot(g, [a,b])
@@ -107,3 +110,5 @@ newton_r = r;
 newton_i = i;
 
 attendere = input('Schiaccia invio per chiudere')
+
+% saveas(gcf,'Bisezione.png') per salvare i grafici su png

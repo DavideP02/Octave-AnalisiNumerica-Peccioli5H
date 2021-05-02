@@ -1,4 +1,4 @@
-% https://github.com/DavideP02/Octave_AnalisiNumerica_Peccioli5H/blob/main/Analisi%20Numerica.m
+% https://github.com/DavideP02/Scuola_Liceo_5_Informatica_Octave-AnalisiNumerica-Peccioli5H/blob/main/analisi.m
 
 f = input('Inserire la funzione, ricordandosi di includere "@(x)" prima della dichiarazione: ')
 g = @(x) 0
@@ -55,7 +55,7 @@ estremosinistro = b;
 attendere = input('Schiaccia invio per iniziare')
 close(f1)
 
-figure % grafico dell'intervallo zoomato
+f2 = figure % grafico dell'intervallo zoomato
 axis equal
 
 while a < b % provo tutti i punti da a a b
@@ -125,6 +125,8 @@ i
 
 bisezione_i = 1;
 bisezione_m = m;
+
+% saveas(f2,'Bisezione.png') % per salvare i grafici come png
 
 attendere = input('Schiaccia invio per continuare con ALGORITMO DI NEWTON')
 
@@ -202,4 +204,4 @@ newton_i = i;
 
 attendere = input('Schiaccia invio per chiudere')
 
-% saveas(gcf,'Bisezione.png') per salvare i grafici su png
+% saveas(f3,'Newton.png') % per salvare i grafici su png

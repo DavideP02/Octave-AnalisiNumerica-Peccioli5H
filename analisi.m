@@ -102,13 +102,9 @@ i = 0;
 while abs(f((a+b)/2)) > 1E-15
   m = (a+b)/2;
   if f(a)*f(m) < 0
-    A = [a, m];
-    a = min(A);
-    b = max(A);
+    b = m;
   elseif f(b)*f(m) < 0
-    B = [b, m];
-    a = min(B);
-    b = max(B);
+    a = m;
   end
   scatter(a, f(a), 10, 'Filled')
   hold on
@@ -120,19 +116,12 @@ end
 
 scatter(m, f(m), 50, 'r','Filled')
 
-m
-i
-
-bisezione_i = 1;
-bisezione_m = m;
+cicli_bisezione = i
+zero_bisezione = m
 
 % saveas(f2,'Bisezione.png') % per salvare i grafici come png
 
 attendere = input('Schiaccia invio per continuare con ALGORITMO DI NEWTON')
-
-i = 0;
-a = estremodestro;
-b = estremosinistro;
 
 f3 = figure % grafico dell'intervallo zoomato
 axis equal
@@ -174,33 +163,34 @@ hold on
 scatter(b, f(b), 30, 'm', 'Filled')
 hold on
 
+i = 0;
+a = estremodestro;
+b = estremosinistro;
+
 epsilon = 1E-10; % ho dovuto utilizzare questa epsilon perché con un numero minore non stampava la derivata corretta
 dprima = @(x) (f(x+epsilon)-f(x))/(epsilon);
 epsilona = 1E-3; % ho dovuto utilizzare questa epsilon perché con un numero minore non stampava la derivata corretta
 dseconda = @(x) (dprima(x+epsilona)-dprima(x))/(epsilona);
 
-r = 0;
+m = 0;
 
 if f(a)*dseconda(a) > 0
-  r = a;
+  m = a;
 elseif f(b)*dseconda(b) > 0
-  r = b;
+  m = b;
 end
 
-while abs(f(r)) > 1E-15
-  r = r - f(r)/dprima(r);
+while abs(f(m)) > 1E-15
+  m = m - f(m)/dprima(m);
   i = i+1;
-  scatter(r, f(r), 10, 'Filled')
+  scatter(m, f(m), 10, 'Filled')
   hold on
 end
 
-scatter(r, f(r), 50, 'r','Filled')
+scatter(m, f(m), 50, 'r','Filled')
 
-r
-i
-
-newton_r = r;
-newton_i = i;
+cicli_newton = i
+zero_newton = m
 
 attendere = input('Schiaccia invio per chiudere')
 

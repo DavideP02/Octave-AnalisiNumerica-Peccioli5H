@@ -3,7 +3,7 @@
 f = input('Inserire la funzione, ricordandosi di includere "@(x)" prima della dichiarazione: ')
 g = @(x) 0
 
-f1 = figure %stampare il grafico per visualizzare l'intervallo contenente gli zeri
+f1 = figure; %stampare il grafico per visualizzare l'intervallo contenente gli zeri
 axis equal
 
 start = -20; % inizio della funzione stampata
@@ -55,7 +55,7 @@ estremosinistro = b;
 attendere = input('Schiaccia invio per iniziare')
 close(f1)
 
-f2 = figure % grafico dell'intervallo zoomato
+f2 = figure; % grafico dell'intervallo zoomato
 axis equal
 
 while a < b % provo tutti i punti da a a b
